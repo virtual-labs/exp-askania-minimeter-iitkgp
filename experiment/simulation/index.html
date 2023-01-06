@@ -1,13 +1,354 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet"  href="./css/main.css">
+  
+  
+  
+  <style>
+    footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+ }
+ /*.img-magnifier-container{
+   position: relative;
+ }
+ .img-magnifier-glass {
+   position: absolute;
+   border: 1px solid #000;
+   border-radius:70%;
+   z-index: 8;
+   cursor: none;
+   
+   /*Set the size of the magnifier glass:*/
+   /*width: 70px;
+   height:70px;
+ }*/
+ 
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+</style>
+
+</head>
+<body class="d-flex flex-column min-vh-100" style="background-color: rgb(3, 44, 83);" onload="pgload();">
+  <header id="header">
+    <div class="container-fluid">
+        <img src="./images/logo.jpg" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rounded img-fluid img-resposive" alt="logo" >
+    </div>
+  </header>
+    
+<div class="container-fluid">
+    <div class=" d-flex justify-content-center p-2  text-white">
+        <h4 style="color:#1bf514">Calibration of Inclined Tube Manometer using Askania Minimeter</h4>
+      </div>
+   
+</div>
+
+  <div class="content-wrapper">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="card border-primary rounded">
+        <div class="card-body" style="background-color:rgb(255, 235, 254);">
+          <h4 class="card-title">Machine set up</h4>
+          <p class="card-text"></p>
+          <div class="img-container">
+          <img id ="askimg" src="./images/tube_nanometerc.png" class=" img-fluid" alt="tube_nanometer">
+          <div id="prrel" data-toggle="modal" data-target="#prschng" class="img-fluid" style="cursor: pointer;" data-toggle="tooltip" data-placement="top"  title="Change Pressure"></div>
+         <div id ="lbeaker"> <img src="./images/beaker.png"  class=" img-fluid" alt="beaker"></div>
+         <div id="askaninam" > 
+          <canvas id="myCanvasa" width="15" height="88" style="border:1px solid #0a0a0a;"></canvas></div>
+          
+          <div ><img src="./images/tubeminimeter.png" id="inclm"  class="img-fluid" alt="tubeminimetre" data-toggle="tooltip" data-placement="top"  title="Inclined Manometer"></div>
+           <canvas id="myCanvas"  width="5" height="180" style="border:1px solid #0a0a0a;"></canvas>
+            
+           </div>
+			    
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div id="graphd" class="card border-primary rounded" style="display:none;">
+             <div class="card-body" style="background-color:rgb(224, 235, 255); "  >
+               <div class="card-title" style="text-align: center; font-weight: bold; font-size: large;">Graph Plot</div>
+               <button type="button" class="btn btn-primary  col-3 col-sm-4 col-xs-3 col-lg-3" onclick="showplot();">Show Graph</button>
+               <button type="button" class="btn btn-warning  col-4 col-sm-4 col-xs-3 col-lg-3" onclick="showbestfitg();">Show Best Fit</button>
+               <button type="button" class="btn btn-success  float-right col-3 col-sm-3 col-xs-3 col-lg-3" onclick="window.print()">Print</button>
+
+               <!--canvas id="myChart" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></canvas-->
+               <div id="myPlot"  class="responsive-plot" style="height:400px;"></div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+      <div class="card border-primary rounded">
+        <div class="card-body" style="background-color:rgb(251, 255, 214);">
+          <h4 class="card-title">Control Elements</h4>
+          <p class="card-text" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Are you ready with the experiment?</p>
+            <button type="button" id="yesbtn" class="btn btn-primary col-md-3 col-sm-3 col-xs-3 col-lg-3"  data-toggle="modal" data-target="#rotatephone"onclick="yesbtncl()" >Yes</button>
+            <button type="button" id="nobtn" class="btn btn-warning col-md-3 col-sm-3 col-xs-3 col-lg-3" data-toggle="modal" data-target="#cancelexp" >No</button>
+            <button type="button" id="btninst" class="btn btn-success float-right col-md-3 col-sm-3 col-xs-3 col-lg-3" data-toggle="collapse" data-target="#instdisp1" disabled>Instruction</button>
+</div></div>
+            <div id="instdisp1" class="collapse card border-primary rounded " > <!--style="display: none;"-->
+              <div class="card-body" style="background-color:rgb(220, 253, 209);">
+            <h4 class="card-title">Instruction</h4>
+         <ol type="1">
+          <li> Askania minimeter & the inclined tube manometer is placed on a firm and leveled surface. </li>
+    <li>Add number of observation you want to take.</li>
+          <li>Take the initial readings of these instruments. And add to the table.</li>
+
+<li> Click on the black square to release pressure from the glass bottle. </li> 
+<li>Click on the "Click to measure" button to take observations of the pressure from the Askania and the inclined tube.</li>
+<li>Then click on the button "Add result to observation table" to add all the values to the table.</li>
+<li>Repeat the process from step (4) untill you reach the given no. of observations. </li>
+<li>Click on "Plot". This will plot the calibration graph as the Askania minimeter observations as function of the inclined tube manometer values without adjusting for the vertical units.
+
+  
+        
+        
+        
+        
+        
+         </ol>
+                </div>
+                </div> 
+            <div id="obsno" class="card border-primary rounded" style="display: none;" >
+              <div class="card-body" style="background-color:rgb(255, 235, 254);">
+                
+          <p class="card-text" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">How many observation do you want to take?</p>
+          
+          <div class="form-group">
+            <label for="inpob" class="col-sm-6 col-xs-6 col-md-6 col-lg-6" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >No.of observations</label>
+            <input type="number" class="form-control col-3 col-sm-4 col-xs-3 col-lg-3" id="inpob"  data-toggle="tooltip" data-placement="right" title="Take any value between 4 and 20.">
+          </div>
+          <button type="button" id="obokbtn" class="btn btn-primary col-3 col-sm-4 col-xs-3 col-lg-3"  onclick="checkobn();" >OK</button>
+          </div>
+        </div>
+          <div  id="measure" class=" card border-primary rounded" style="display: none;">
+            <div class="card-body" style="background-color:rgb(224, 235, 255);">
+              <h4 class="card-title">Measuring Data Inputs <button type="button" id="msbtn" class="btn btn-primary
+                  col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="clckmes();" disabled>Click to measure</button></h4>
+              
+              <div class="form-group row">
+                
+                <label for="obno" class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Observation Number</label>
+                <input type="number" class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4" id="obsvno"  max="20"  min="1" placeholder="Observation No:" >
+                <label for="askread" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " style=" font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Askania Reading</label>
+                <input type="number" class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4" id="askaread" placeholder="Askania Reading">
+                <label for="inclread" class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style=" font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Inclined Reading</label>
+                <input type="number" class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4" id="incldread" placeholder="Inclined Reading">
+              </div>
+              <button type="button" id="obbtn" class="btn btn-primary  col-xs-6 col-sm-6 col-md-6 col-lg-6" onclick="addresult();">Add Result to Observation Table</button>
+              </div>
+              </div>
+              <div id="obvtable1" class="card border-primary rounded" style="display: none;">
+                <div class="card-body" style="background-color:rgb(241, 248, 198);">
+              <h4 class="card-title">Observation Table</h4>
+              
+              <div class="table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+              <table class="table table-bordered table-hover" id="obtable">
+                <thead>
+                  <tr class="table-primary">
+                    <th>Sl No.</th>
+                    <th>Askania</th>
+                    <th>Inclined</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+              
+
+              </div>
+            </div>
+          </div>
+        
+      <!--/div>
+
+
+    </div-->
+    </div>
+</div>
+</div>
+</div> <!--container-wrapper ends-->
+
+<!-- modal for better view-->
+<div class="modal fade" id="rotatephone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: rgb(250, 255, 224);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">For better view in mobile phone</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select auto-rotate OR
+        Select Desktop site 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="showpanel();" >OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+
+<!-- check no of obs-->
+<div class="modal fade" id="checkobsn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: rgb(250, 255, 224);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="alertmsg"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="alertmsg();" >OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+
+<!-- check table obs no -->
+<div class="modal fade" id="obtblnum" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: rgb(250, 255, 224);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="alertmsgob"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="alertmsgob();" >OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+
+
+<!-- modal for change pressure-->
+
+<div class="modal fade" id="prschng" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: rgb(250, 255, 224);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pressure Changed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Pressure has been changed. Now click "click to measure".
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="preschngbtn();" >OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!---->
+
+
+<!-- Cancel Experiment btn-->
+<div class="modal fade" id="cancelexp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content" style="background-color: rgb(250, 255, 224);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to exit?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Click "Yes" if you want to exit from the experiment. Click "No" if you want to proceed with the experiment.
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-warning col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="exitexp();">Yes</button>
+        <button type="button" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3" data-dismiss="modal" onclick="noexitexp();">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---->
+
+<!-- footer-->
+
+<footer class="mt-auto" style="background-color: rgb(168, 222, 253);">
+  <p class="justify-content-center" style="color:black;">© 2022 Copyright, Indian Institute of Technology Kharagpur,
+    <a href="/" style="color: rgb(50, 3, 180); text-decoration: underline;"> Virtual Lab </a></p>
+</footer>
+
+<!-- footer-->
+
+
+
+
+<script>
+  
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+/* inclined tube initial reading */
+var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(2, 170);
+    ctx.lineTo(2, 180);
+    ctx.stroke();
+
+
+/* Askania initial reading */
+    var ca = document.getElementById("myCanvasa");
+    var ctxa = ca.getContext("2d");
+    ctxa.strokeStyle = '#fa6305';
+    ctxa.lineWidth = 50;
+    ctxa.beginPath();
+    ctxa.moveTo(0, 78);   
+    ctxa.lineTo(0, 180);
+    ctxa.stroke();
+  /* Initiate Magnify Function
+  with the id of the image, and the strength of the magnifier glass:*/
+  /*magnify("askimg", 3);*/
+ 
+
+
+</script>
+<script src="./js/jquery.slim.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/modernizr-1.5.min.js"></script>
+  <!--script src="../js/jquery-1.7.1.min.js"></script-->
+  <!--script src="../exp1/js/zoomscaleexp1.js"></script-->
+  <!--script src="../js/Chart.js"></script-->
+  <script src="./js/Plotly.js"></script> <!--https://cdn.plot.ly/plotly-latest.min.js-->
+  <script src="./js/addinptotable.js"></script>
+  <script src="./js/checkob.js"></script>
+  <!--script src="../exp1/js/graphplot.js"></script-->
+  <script src="./js/graphplotly.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>

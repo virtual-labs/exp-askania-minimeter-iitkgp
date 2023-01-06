@@ -1,24 +1,16 @@
+
+
 ## Introduction
 
+<div align="center">
+<img src="experiment/images/iitkgp.png" width="10%">
+</div>
 
-<b>Discipline | <b>Fill your discipline name here
+### About the Experiment
+<b>Discipline | <b> Mining Engineering  
 :--|:--|
-<b> Lab | <b> Fill your lab name here
-<b> Experiment|     <b> Fill your experiment name and number here
+<b> Lab | <b> **Mine Automation & Virtual Reality**
+<b> Experiment|     <b> **Calibration of Inclined Tube Manometer using Askania Minimeter and Experiment 5**
 
-### About the Experiment 
 
-Fill a brief description of this experiment here
 
-<b>Name of Developer | <b> Fill the name of experiment owner here 
-:--|:--|
-<b> Institute | <b>  
-<b> Email id|     <b>  
-<b> Department |  
-
-### Contributors List
-
-SrNo | Name | Faculty or Student | Department| Institute | Email id
-:--|:--|:--|:--|:--|:--|
-1 | . | . | . | . | .
-2 | . | . | . | . | .
