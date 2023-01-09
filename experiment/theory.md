@@ -1,4 +1,4 @@
-### Link your theory in here
+## Theory
 
 **Inclined Tube Manometer:**
 
@@ -40,7 +40,7 @@ Take the Askania Minimeter readings and the Inclined Tube manometer readings.
 <img src="images/arrow.jpg" >
 </div>
 
-Here Yi be the actual reading of Askania Minimeter and Xi is the reading of inclined manometer. Now error L is given by:
+Here Y<sub>i</sub> be the actual reading of Askania Minimeter and X<sub>i</sub> is the reading of inclined manometer. Now error L is given by:
 
 $$ L = \sum (Y_i - mX_i)^2  \ to \ minimize \ L, \frac{\delta L}{\delta M} = 0 $$
 

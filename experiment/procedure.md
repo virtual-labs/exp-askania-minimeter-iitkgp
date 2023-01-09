@@ -23,47 +23,47 @@ The following procedures are to be followed by the user in order to calibrate th
 
 Start the Experiment by clicking the button "Yes".
 <div align="center">
-<img src="images/pro_sim_1.jpg" width="30%">
+<img src="images/pro_sim_1.jpg" width="40%">
 </div>
 
 Then enter the number of Observations in the input box, the user may want to calibrate, the range is 4 to 20 observation may take.
 
 <div align="center">
-<img src="images/pro_sim_2.jpg" width="30%">
+<img src="images/pro_sim_2.jpg" width="40%">
 </div>
 
 After that press the "Ok" button to calibrate the measurements of the Askania minimeter and the Inclined tube Manometer. And Press the button "Click to Measure" for measuring the askania and the inclined readings, for first observation.
 
 <div align="center">
-<img src="images/pro_sim_3.jpg" width="30%">
+<img src="images/pro_sim_3.jpg" width="40%">
 </div>
 
 Then click on the button "Add result to the Observation table" to add the readings in the observation table.
 
 <div align="center">
-<img src="images/pro_sim_4.jpg" width="30%">
+<img src="images/pro_sim_4.jpg" width="40%">
 </div>
 
 Press the black button in the machine setup "to change the pressure" and click "Click to Measure" for measuring the askania and the inclined readings, for second observation.
 
 <div align="center">
-<img src="images/pro_sim_5.jpg" width="30%">
+<img src="images/pro_sim_5.jpg" width="40%">
 </div>
 
 The process is continue until the desired observations are not taken, which is given by the user.
 
 <div align="center">
-<img src="images/pro_sim_5.jpg" width="30%">
+<img src="images/pro_sim_5.jpg" width="40%">
 </div>
 
 After that the button "Show Graph" is clicked for plotting the graph.
 
 <div align="center">
-<img src="images/pro_sim_6.jpg" width="30%">
+<img src="images/pro_sim_6.jpg" width="40%">
 </div>
 
 Here add the best fit line by clicking the button "Add Best Fit Line" after that for print the graph press the "Print" button.
 
 <div align="center">
-<img src="images/pro_sim_7.jpg" width="30%">
+<img src="images/pro_sim_7.jpg" width="40%">
 </div>
