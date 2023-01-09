@@ -1,4 +1,4 @@
-### Subject Matter Experts 
+## Subject Matter Experts 
 
 <!--Fill a brief description of this experiment here-->
 
@@ -16,7 +16,7 @@
 <b> Department |  **Department of Mining Engineering**
 <b>Webpage| <b> [http://www.iitkgp.ac.in/cv/mi-samantab](http://www.iitkgp.ac.in/cv/mi-samantab)
 
-### Contributors List
+## Contributors List
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
