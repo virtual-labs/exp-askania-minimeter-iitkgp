@@ -1,0 +1,27 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Inclined tube manometer is commonly used for measuring _______ in a mine.",
+      "answers": {
+        "a": "Differential pressure",
+        "b": "Pressure",
+        "c": "Velocity",
+        "d": "None"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Differential Pressure is the difference in pressure between two points.",
+      "answers": {
+        "a": "False",
+        "b": "True"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Absolute Pressure: is referenced to zero(0) against perfect vacuum (=gauge pressure + atmospheric pressure)",
+      "answers": {
+        "a": "True",
+        "b": "False"
+        
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "For greater sensitivity, the inclined tube manometers can be filled with alcohol which also gives better meniscus than water.",
+      "answers": {
+        "a": "True",
+        "b": "False"
+        
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
