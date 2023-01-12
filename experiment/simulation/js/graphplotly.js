@@ -1,3 +1,9 @@
+/* Lab: Mine Automation and Virtual Reality
+   Exp :Calibration of Inclined Tube Manometer using Askania Minimeter
+	 File name: graphplotly.js
+   Author:Prakriti Dhang
+*/
+
 var dataPointai =[];
 
 var xArray = [];
