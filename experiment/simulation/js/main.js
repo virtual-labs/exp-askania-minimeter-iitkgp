@@ -1,3 +1,7 @@
+/*Lab: Mine Automation and Virtual Reality
+   Exp :Calibration of Inclined Tube Manometer using Askania Minimeter
+	 File name: main.js
+   Author:Prakriti Dhang */
 
 var obcount;
 var count = 0;

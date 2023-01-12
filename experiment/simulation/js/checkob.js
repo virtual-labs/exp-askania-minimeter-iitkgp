@@ -1,4 +1,5 @@
-/* Lab:exp_1_Calibration of Inclined Tube Manometer using Askania Minimeter
+/* Lab: Mine Automation and Virtual Reality
+   Exp :Calibration of Inclined Tube Manometer using Askania Minimeter
 	 File name: checkob.js
    Author:Prakriti Dhang
 */
