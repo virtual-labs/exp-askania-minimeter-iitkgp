@@ -11,6 +11,26 @@ var countbtnclk; /* count measure button click */
 var canvasa=5; /*askania canvas count */
 function pgload(){
     document.getElementById('prrel').style.display="none";
+    /* inclined tube initial reading */
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 5;
+ctx.beginPath();
+ctx.moveTo(2, 165);
+ctx.lineTo(2, 180);
+ctx.stroke();
+
+
+/* Askania initial reading */
+var ca = document.getElementById("myCanvasa");
+var ctxa = ca.getContext("2d");
+ctxa.strokeStyle = '#fa6305';
+ctxa.lineWidth = 50;
+ctxa.beginPath();
+ctxa.moveTo(0, 78);   
+ctxa.lineTo(0, 180);
+ctxa.stroke();
 }
 
 function showpanel(){
@@ -78,7 +98,7 @@ function clckmes() {
     ctx.lineWidth = 5;
     ctx.beginPath();
     
-    ctx.moveTo(centerX, centerY-canvasc);   
+    ctx.moveTo(centerX, centerY-canvasc);   /* 168 */
     
     
     ctx.lineTo(2, 180);
