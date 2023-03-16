@@ -1,1 +1,109 @@
-/* You CSS goes in here */
+/* Lab: Mine Automation and Virtual Reality
+   Exp_Calibration of Inclined Tube Manometer using Askania Minimeter
+	 File name: main.css
+   Author:Prakriti Dhang
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+table,th,td{
+    text-align: center;
+}
+.img-container{
+    display: inline-block;
+    position: relative;
+  }
+
+
+
+#myCanvas{
+    position: absolute;
+    left: 78.2%;
+    top: 14%;
+    width: 1%;
+   height: 64%;
+    transform: rotate(45deg) ;
+    }
+
+#myCanvasa{
+    position: absolute;
+left: 34%;
+top: 20%;
+width: 3%;
+height: 29%;
+}
+
+
+
+
+#inclm{
+    position: absolute;
+    left: 63%;
+    top: 32%;
+    width: 31%;
+   height: 28%;
+    -webkit-transform: rotate(-19deg);
+    transform: rotate(-19deg);
+}
+
+#lbeaker{
+ position: absolute;
+ top: 37%;
+ left: 1%;
+ width: 15%;
+
+}
+
+
+
+
+
+    #prrel{
+        width: 3%;
+        height: 4%;
+        position: absolute;
+        left:8%;
+        top:26%;
+        background: rgb(24, 23, 23);
+        }
+
+
+
+
+        @media print {
+            body {-webkit-print-color-adjust: exact !important;
+               
+                
+            }
+            }
+            @page {
+                margin: 1in; 
+              }
+              
+            @print {
+               @page :footer {
+                  display: none;
+                  
+                   
+               }
+             
+               @page :header {
+                  display: none;
+                  
+               }
+           }
+           @media print {
+            #myPlot {
+              padding-right: 1cm;
+            }
+          }
+
+
+
+
+
+
+
+
