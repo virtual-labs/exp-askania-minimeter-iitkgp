@@ -17,7 +17,7 @@ Askania minimeter = 0.01 mm WG
 Inclined tube manometer = 0.1 cm WG
 DPCalc = 0.1 Pa
 
-## Procedure Simulation
+##  Simulation Procedure
 
 The following procedures are to be followed by the user in order to calibrate the askania minimeter readings:
 
@@ -32,7 +32,7 @@ Then enter the number of Observations in the input box, the user may want to cal
 <img src="images/pro_sim_2.jpg" width="40%">
 </div>
 
-After that press the "Ok" button to calibrate the measurements of the Askania minimeter and the Inclined tube Manometer. And Press the button "Click to Measure" for measuring the askania and the inclined readings, for first observation.
+After that press the "Ok" button to calibrate the measurements of the Askania minimeter and the Inclined tube Manometer. Take the initial readings of these instruments and enter in the input box. This measures the askania and the inclined readings, for first observation.
 
 <div align="center">
 <img src="images/pro_sim_3.jpg" width="40%">
@@ -44,13 +44,13 @@ Then click on the button "Add result to the Observation table" to add the readin
 <img src="images/pro_sim_4.jpg" width="40%">
 </div>
 
-Press the black button in the machine setup "to change the pressure" and click "Click to Measure" for measuring the askania and the inclined readings, for second observation.
+Press the black button in the machine setup "to change the pressure" and click "Click to Measure" for measuring the askania and the inclined readings, for second observation. Enter in the input box.
 
 <div align="center">
 <img src="images/pro_sim_5.jpg" width="40%">
 </div>
 
-The process is continue until the desired observations are not taken, which is given by the user.
+Continue until the desired number of observations, which is given by the user.
 
 <div align="center">
 <img src="images/pro_sim_5.jpg" width="40%">
